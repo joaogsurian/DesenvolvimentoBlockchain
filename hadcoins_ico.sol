@@ -1,12 +1,4 @@
-// URL para compilar
-//http://remix.ethereum.org/#appVersion=0.7.7&optimize=false&version=soljson-v0.4.11+commit.68ef5810.js
-
-//ico hadcoins
-
-//versão
-pragma solidity ^0.4.11;
- 
-contract hadcoin_ico {
+ contract hadcoin_ico {
  
     //número máximo de hadcoins disponíveis no ICO		 
     uint public max_hadcoins = 1000000;
@@ -19,7 +11,7 @@ contract hadcoin_ico {
     mapping(address => uint) equity_hadcoins;
     mapping(address => uint) equity_usd;
  
-    //verificando se o investidor por comprar hadcoins
+    //verificando se o investidor pode comprar hadcoins
     modifier can_buy_hadcoins(uint usd_invested) {
         require (usd_invested * usd_to_hadcoins + total_hadcoins_bought <= max_hadcoins);
         _;
